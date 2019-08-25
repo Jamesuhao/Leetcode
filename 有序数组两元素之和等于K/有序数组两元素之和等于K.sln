@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "有序数组两元素之和等于K", "有序数组两元素之和等于K\有序数组两元素之和等于K.vcxproj", "{F87F68D1-0DA5-4D65-BCE0-A7DB2F6B374A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F87F68D1-0DA5-4D65-BCE0-A7DB2F6B374A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F87F68D1-0DA5-4D65-BCE0-A7DB2F6B374A}.Debug|Win32.Build.0 = Debug|Win32
+		{F87F68D1-0DA5-4D65-BCE0-A7DB2F6B374A}.Release|Win32.ActiveCfg = Release|Win32
+		{F87F68D1-0DA5-4D65-BCE0-A7DB2F6B374A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
