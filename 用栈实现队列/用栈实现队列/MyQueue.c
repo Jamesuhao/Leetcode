@@ -6,7 +6,8 @@ void StackInit(Stack* st)
 {
 	assert(st);
 	st->_a = NULL;
-	st->_capacity = st->_top = 0;
+	st->_capacity = 0;
+	st->_top = 0;
 }
 void StackDestory(Stack* st)
 {
@@ -23,10 +24,12 @@ void StackPush(Stack* st, DataType x)
 	{
 		size_t newcapacity = st->_capacity == 0 ? 10 : 2 * st->_capacity;
 		st->_a = (DataType*)realloc(st->_a, newcapacity * sizeof(DataType));
+		//st->_a = (DataType*)malloc(sizeof(Stack)* newcapacity);
 		st->_capacity = newcapacity;
 	}
 	//²åÈë
-	st->_a[st->_top++] = x;
+	st->_a[st->_top] = x;
+	st->_top++;
 }
 void StackPop(Stack* st)
 {
@@ -51,11 +54,15 @@ int StackEmpty(Stack* st)
 	assert(st);
 	return st->_top == 0 ? 1 : 0;
 }
+
 typedef struct
 {
 	Stack q1;
 	Stack q2;
 }MyQueue;
+
+
+
 MyQueue* myQueueCreate()
 {
 	MyQueue* Qu = (MyQueue*)malloc(sizeof(MyQueue));
@@ -63,6 +70,8 @@ MyQueue* myQueueCreate()
 	StackInit(&Qu->q2);
 	return Qu;
 }
+
+
 void myQueuePush(MyQueue* obj, int x)
 {
 	assert(obj);
@@ -111,12 +120,16 @@ void myQueueFree(MyQueue* obj) {
 //[[], [1], [2], [], [], []]
 int main()
 {
-	MyQueue obj;
-	myQueueCreate();
-	myQueuePush(&obj, 1);
-	myQueuePush(&obj, 2);
-	myQueuePeek(&obj);
-	myQueuePop(&obj);
-	myQueueEmpty(&obj);
+	MyQueue *obj;
+	obj = myQueueCreate();
+	myQueuePush(obj, 1);
+	myQueuePush(obj, 2);
+	myQueuePush(obj, 3);
+	myQueuePush(obj, 4);
+	myQueuePush(obj, 5);
+	myQueuePush(obj, 6);
+	myQueuePeek(obj);
+	myQueuePop(obj);
+	myQueueEmpty(obj);
 	return 0;
 }
